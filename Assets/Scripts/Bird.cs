@@ -10,7 +10,7 @@ public class Bird : MonoBehaviour {
 	private Animator anim;
 	const int LEFT = 0;
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 
 		rb2d = GetComponent<Rigidbody2D> (); 
 		anim = GetComponent<Animator> ();
@@ -18,7 +18,7 @@ public class Bird : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		if(!isDead)
 		{
 			if(Input.GetMouseButtonDown(LEFT))
@@ -31,11 +31,11 @@ public class Bird : MonoBehaviour {
 		
 	}
 
-	void onCollisionEnter2D()
+	public void OnCollisionEnter2D()
 	{
 		isDead = true;
 		anim.SetTrigger("Die");
-		return;
+		GameControl.instance.BirdDied();
 
 	}
 }
