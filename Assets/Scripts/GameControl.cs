@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour {
 	public GameObject gameOverText;
 	public bool gameOver = false;
 
+	public float scrollSpeed = -1.5f;
+
 	public const int LEFT = 0;
 	// Use this for initialization
 
